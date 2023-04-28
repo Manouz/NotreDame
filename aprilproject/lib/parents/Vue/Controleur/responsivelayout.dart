@@ -3,8 +3,8 @@ import 'package:aprilproject/parents/Vue/MobileScreen.dart';
 import 'package:aprilproject/parents/Vue/TabletScreen.dart';
 import 'package:aprilproject/parents/Vue/desktopScreen.dart';
 
-class ResponsiveLayout extends StatelessWidget {
-  const ResponsiveLayout(
+class ResponsiveLayouts extends StatelessWidget {
+  const ResponsiveLayouts(
       {super.key,
       required this.mobileScaffold,
       required this.tabletScaffold,

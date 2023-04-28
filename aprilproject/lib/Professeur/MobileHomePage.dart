@@ -75,6 +75,7 @@ class _MobileHomePage extends State<MobileHomePage>
       body: SafeArea(
         child: CustomScrollView(slivers: [
           SliverAppBar(
+            automaticallyImplyLeading: true,
             elevation: 0.0,
             pinned: false,
             backgroundColor: Color.fromARGB(255, 26, 132, 219),

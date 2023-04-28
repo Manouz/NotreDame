@@ -243,7 +243,7 @@ class Constante extends StatelessWidget {
       child: Row(
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage("assets/terrain.jpg"),
+            backgroundImage: AssetImage("assets/images/terrain.jpg"),
             radius: 130,
           ),
           SizedBox(width: 5),

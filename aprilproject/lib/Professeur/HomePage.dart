@@ -53,6 +53,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       body: SafeArea(
         child: CustomScrollView(slivers: [
           SliverAppBar(
+            automaticallyImplyLeading: false,
             elevation: 0.0,
             pinned: false,
             backgroundColor: Color.fromARGB(255, 25, 124, 204),
@@ -73,6 +74,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 titlePadding: EdgeInsets.all(10)),
           ),
           SliverAppBar(
+            automaticallyImplyLeading: false,
             elevation: 0.0,
             pinned: true,
             toolbarHeight: 70,

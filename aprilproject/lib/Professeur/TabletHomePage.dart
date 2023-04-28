@@ -76,6 +76,7 @@ class _TabletHomePage extends State<TabletHomePage>
         child: CustomScrollView(slivers: [
           SliverAppBar(
             elevation: 0.0,
+            automaticallyImplyLeading: true,
             pinned: false,
             backgroundColor: Color.fromARGB(255, 26, 132, 219),
             expandedHeight: 220,

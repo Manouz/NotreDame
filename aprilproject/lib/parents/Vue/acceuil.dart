@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:aprilproject/parents/Vue/Model/model.dart';
 import 'package:aprilproject/parents/Vue/desktopScreen.dart';
+import 'package:aprilproject/Professeur/LoginPage.dart';
 
 class Acceuil extends StatelessWidget {
   Acceuil({super.key});
@@ -64,9 +65,14 @@ class Acceuil extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: colors, borderRadius: BorderRadius.circular(30)),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (builder) => DesktopScaffold()));
+                  },
                   child: Center(
-                      child: Text("Cours",
+                      child: Text("Visite Guidée",
                           style: GoogleFonts.kalam(
                               fontSize: 18, color: Colors.white))),
                 ),
@@ -80,7 +86,10 @@ class Acceuil extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: colors, borderRadius: BorderRadius.circular(30)),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (builder) => LoginPage()));
+                  },
                   child: Center(
                       child: Text("Connexion",
                           style: GoogleFonts.kalam(
@@ -101,7 +110,8 @@ class Acceuil extends StatelessWidget {
                 height: 500,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/images/ecole.jpg"), fit: BoxFit.cover),
+                      image: AssetImage("assets/images/ecole.jpg"),
+                      fit: BoxFit.cover),
                   //child: Image.asset()
                 ),
               ),

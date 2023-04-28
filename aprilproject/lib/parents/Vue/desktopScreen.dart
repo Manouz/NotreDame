@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:aprilproject/parents/Vue/Model/model.dart';
 import 'package:aprilproject/parents/Vue/acceuil.dart';
 import 'package:aprilproject/parents/Vue/parents.dart';
+import 'package:aprilproject/Professeur/LoginPage.dart';
 
 class DesktopScaffold extends StatelessWidget {
   DesktopScaffold({super.key});
@@ -20,7 +21,8 @@ class DesktopScaffold extends StatelessWidget {
                 height: 600,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/images/ecole.jpg"), fit: BoxFit.cover),
+                      image: AssetImage("assets/images/ecole.jpg"),
+                      fit: BoxFit.cover),
                 ),
                 child: Stack(
                     //alignment: AlignmentDirectional.topStart,
@@ -31,7 +33,9 @@ class DesktopScaffold extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Image(image: AssetImage("assets/images/notredame.png")),
+                              Image(
+                                  image: AssetImage(
+                                      "assets/images/notredame.png")),
                               SizedBox(
                                   width: 1,
                                   child: Container(
@@ -84,9 +88,14 @@ class DesktopScaffold extends StatelessWidget {
                                       color: colors,
                                       borderRadius: BorderRadius.circular(30)),
                                   child: InkWell(
-                                    onTap: () {},
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (Context) => Acceuil()));
+                                    },
                                     child: Center(
-                                        child: Text("Cours",
+                                        child: Text("Visite Guidée",
                                             style: GoogleFonts.kalam(
                                                 fontSize: 18,
                                                 color: Colors.white))),
@@ -106,7 +115,8 @@ class DesktopScaffold extends StatelessWidget {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (Context) => Parents()));
+                                              builder: (Context) =>
+                                                  LoginPage()));
                                     },
                                     child: Center(
                                         child: Text("Connexion",
