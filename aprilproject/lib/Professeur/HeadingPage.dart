@@ -165,7 +165,7 @@ class HeadingText extends StatelessWidget {
         child: Column(
       children: [
         Text(
-          "Bienvenu, Mme 'Abebie'",
+          "Bienvenue, Mme 'Abebie'",
           style: TextStyle(
             fontSize: 32,
             color: Colors.white,
@@ -189,7 +189,7 @@ class HeadingText extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  "Learn More",
+                  "Actualité",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
