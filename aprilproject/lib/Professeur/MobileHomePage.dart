@@ -57,17 +57,17 @@ class _MobileHomePage extends State<MobileHomePage>
             Divider(
               thickness: 1,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                ProgramDay(),
-                SizedBox(
-                    height: 400,
-                    child: ListViewBuilder(
-                      resp: RespSwitch.desktop,
-                    )),
-              ],
-            ),
+            // Column(
+            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //   children: [
+            //     ProgramDay(),
+            //     SizedBox(
+            //         height: 200,
+            //         child: ListViewBuilder(
+            //           resp: RespSwitch.desktop,
+            //         )),
+            //   ],
+            // ),
           ]),
         ),
       ),
