@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:educationproject/Message/chat_screen.dart';
-import 'package:educationproject/Message/user_model.dart';
-import 'package:educationproject/Message/message_model.dart';
+import 'package:aprilproject/Professeur/Message/chat_screen.dart';
+import 'package:aprilproject/Professeur/Message/user_model.dart';
+import 'package:aprilproject/Professeur/Message/message_model.dart';
 
 class ChatScreen extends StatefulWidget {
   final User user;

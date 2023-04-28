@@ -1,7 +1,7 @@
 // import 'dart:ffi';
 
-import 'package:educationproject/ConnectedProfil.dart';
-import 'package:educationproject/Message/user_model.dart';
+import 'package:aprilproject/Professeur/ConnectedProfil.dart';
+import 'package:aprilproject/Professeur/Message/user_model.dart';
 import 'package:flutter/material.dart';
 import 'ProgramOfDay.dart';
 import 'TabletHomePage.dart';
