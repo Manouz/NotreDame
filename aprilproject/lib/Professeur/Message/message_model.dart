@@ -1,4 +1,4 @@
-import 'package:educationproject/Message/user_model.dart';
+import 'package:aprilproject/Professeur/Message/user_model.dart';
 
 class Message {
   final User sender;
