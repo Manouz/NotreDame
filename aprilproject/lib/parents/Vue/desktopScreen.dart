@@ -148,7 +148,7 @@ class DesktopScaffold extends StatelessWidget {
                               children: [
                                 RichText(
                                   text: const TextSpan(
-                                    text: 'Bienvenue sur le portatil de',
+                                    text: 'Bienvenue sur le portail de',
                                     style: TextStyle(
                                         fontSize: 35,
                                         color: Colors.white,
@@ -157,7 +157,7 @@ class DesktopScaffold extends StatelessWidget {
                                       TextSpan(
                                           text: ' NOTRE DAME',
                                           style: TextStyle(
-                                              fontSize: 50,
+                                              fontSize: 40,
                                               color: Colors.white,
                                               fontWeight: FontWeight.bold)),
                                     ],
