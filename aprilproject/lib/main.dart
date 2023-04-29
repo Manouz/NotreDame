@@ -35,16 +35,16 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        home: ResponsiveLayout(
-            // Platform professeur
-            mobileBody: MobileHomePage(),
-            tabletBody: TabletHomePage(),
-            desktopBody: HomePage()));
-    //ok
-    // home: ResponsiveLayouts(
-    //   mobileScaffold: MobileScaffold(),
-    //   tabletScaffold: TabletScaffold(),
-    //   desktopScaffold: DesktopScaffold(),
-    // ));
+        // home: ResponsiveLayout(
+        //     // Platform professeur
+        //     mobileBody: const MobileHomePage(),
+        //     tabletBody: const TabletHomePage(),
+        //     desktopBody: const HomePage()));
+        //ok
+        home: ResponsiveLayouts(
+          mobileScaffold: MobileScaffold(),
+          tabletScaffold: TabletScaffold(),
+          desktopScaffold: DesktopScaffold(),
+        ));
   }
 }
