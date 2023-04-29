@@ -138,40 +138,32 @@ class DesktopScaffold extends StatelessWidget {
                             )
                           ],
                         ),
-                        Center(
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 50.0),
-                            child: Container(
-                              width: 900,
-                              height: 450,
-                              decoration: BoxDecoration(
-                                  color: Color.fromRGBO(0, 0, 0, 0.6),
-                                  borderRadius: BorderRadius.circular(25)),
-                              child: Stack(
-                                children: [
-                                  Text(
-                                    "Bienvenu au temple\noù travailler devient\naussi",
-                                    style: GoogleFonts.lobsterTwo(
-                                        fontSize: 120, color: Colors.white),
+                        Align(
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(0, 0, 0, 0.6),
+                                borderRadius: BorderRadius.circular(2)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                RichText(
+                                  text: const TextSpan(
+                                    text: 'Bienvenue sur le portatil de',
+                                    style: TextStyle(
+                                        fontSize: 35,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                          text: ' NOTRE DAME',
+                                          style: TextStyle(
+                                              fontSize: 50,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold)),
+                                    ],
                                   ),
-                                  Stack(children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 238, top: 300),
-                                      child: DefaultTextStyle(
-                                        style: GoogleFonts.lobsterTwo(
-                                            fontSize: 120),
-                                        child: AnimatedTextKit(
-                                          animatedTexts: [
-                                            TyperAnimatedText('interessant'),
-                                          ],
-                                          repeatForever: true,
-                                        ),
-                                      ),
-                                    ),
-                                  ]),
-                                ],
-                              ),
+                                )
+                              ],
                             ),
                           ),
                         )
