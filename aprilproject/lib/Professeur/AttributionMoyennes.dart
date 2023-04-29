@@ -229,7 +229,7 @@ class ListMoy extends StatelessWidget {
           GridColumn(
               columnName: 'prenom',
               label: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 1),
                 alignment: Alignment.centerLeft,
                 child: const Text(
                   'Prénom',
@@ -239,7 +239,7 @@ class ListMoy extends StatelessWidget {
           GridColumn(
               columnName: 'date_Naissance',
               label: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 1),
                 alignment: Alignment.centerLeft,
                 child: const Text(
                   'Date de naissance',
