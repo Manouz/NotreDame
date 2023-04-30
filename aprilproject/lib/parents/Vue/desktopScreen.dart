@@ -99,27 +99,29 @@ class DesktopScaffold extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               const SizedBox(width: 30.0, height: 50.0),
-                              const Text(
-                                'Be',
-                                style: TextStyle(fontSize: 19.0),
-                              ),
-                              const SizedBox(width: 30.0, height: 50.0),
-                              DefaultTextStyle(
-                                style: const TextStyle(
-                                  fontSize: 19,
-                                  fontFamily: 'Horizon',
-                                ),
-                                child: AnimatedTextKit(
-                                  animatedTexts: [
-                                    RotateAnimatedText('AWESOME'),
-                                    RotateAnimatedText('OPTIMISTIC'),
-                                    RotateAnimatedText('DIFFERENT'),
-                                  ],
-                                  onTap: () {
-                                    print("Tap Event");
-                                  },
-                                ),
-                              ),
+                              // const Text(
+                              //   'Be',
+                              //   style: TextStyle(fontSize: 19.0),
+                              // ),
+                              SizedBox(
+                                  width: 100.0,
+                                  height: 50.0,
+                                  child: DefaultTextStyle(
+                                    style: const TextStyle(
+                                      fontSize: 19,
+                                      fontFamily: 'Horizon',
+                                    ),
+                                    child: AnimatedTextKit(
+                                      animatedTexts: [
+                                        RotateAnimatedText('DECOUVREZ'),
+                                        RotateAnimatedText('NOTRE'),
+                                        RotateAnimatedText('PROJET'),
+                                      ],
+                                      onTap: () {
+                                        print("Tap Event");
+                                      },
+                                    ),
+                                  )),
                             ],
                           ))),
                 ),
