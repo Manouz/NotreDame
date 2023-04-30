@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:aprilproject/ColorsPanel.dart';
 
 //import 'package:animated_text_kit/animated_text_kit.dart';
 
@@ -13,110 +14,125 @@ class Grid extends StatelessWidget {
   Grid({super.key});
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 5 / 3,
-      child: SizedBox(
-        child: GridView.count(
-          physics: const NeverScrollableScrollPhysics(),
-          primary: false,
-          padding: const EdgeInsets.all(20),
-          crossAxisSpacing: 10,
-          childAspectRatio: 5 / 4,
-          mainAxisSpacing: 10,
-          crossAxisCount: 3,
-          children: [
-            Container(
-              child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: Column(
-                    children: [
-                      Text('Pourquoi ',
-                          style: GoogleFonts.lobsterTwo(fontSize: 56)),
-                      Text('sommes-nous ',
-                          style: GoogleFonts.lobsterTwo(fontSize: 56)),
-                      Text(
-                        'les meilleurs  ',
-                        style: GoogleFonts.lobsterTwo(fontSize: 56),
-                      ),
-                      Text(
-                        'de tous ?',
-                        style: GoogleFonts.lobsterTwo(fontSize: 56),
-                      ),
-                    ],
-                  )),
-            ),
-            Container(
-              padding: EdgeInsets.all(10),
-              //width: 500,
-              //height: 100,
-              decoration: BoxDecoration(
-                  color: Colors.teal[200],
-                  borderRadius: BorderRadius.circular(25)),
-              child: Constnt(
-                icone: Icon(Icons.supervised_user_circle_rounded),
-                a: "Enseignants Qualifiés",
-                b: "Nôtre qualité d’enseignement provient du choix judicieux des enseignants qui eux sont formés dans les plus grandes universités internationales... ",
-              ),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.teal[300],
-                borderRadius: BorderRadius.circular(25),
-              ),
-              padding: const EdgeInsets.all(10),
-              child: Constnt(
-                icone: Icon(Icons.abc),
-                a: "Test d’entrée",
-                b: 'La sélection par le test nous assure du bagage intellectuel que possède tous nos collégiens afin de leur assurer un meilleur suivie académique...',
-              ),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.teal[400],
-                borderRadius: BorderRadius.circular(25),
-              ),
-              padding: const EdgeInsets.all(10),
-              child: Constnt(
-                icone: Icon(Icons.health_and_safety),
-                a: "Curriculium-Vitae",
-                b: 'Le suivie de la santé de nos collégiens sont partie du fondements de notre établissement.C’est en celà l’un de nos secrets de réussite...',
-              ),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.teal[500],
-                borderRadius: BorderRadius.circular(25),
-              ),
-              padding: const EdgeInsets.all(10),
-              child: Constnt(
-                icone: Icon(Icons.circle_notifications),
-                a: "Certifications",
-                b: 'Pendant l’année académique chaque collégiens a droit a une formations cerrtifiante jusqu’au baccalauréat ,ce qui compte environ 7 certifications ...',
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.all(10),
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.teal[600],
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: Constnt(
-                icone: Icon(Icons.abc),
-                a: "Meilleur Investissement",
-                b: 'Notre établissement considère la curcuse de vôtre enfant comme un investissement correct qui aura un retour sur investissement certain ...',
-              ),
-            ),
-          ],
+    return Wrap(
+      alignment: WrapAlignment.center,
+      runSpacing: 32,
+      spacing: 20,
+      children: [
+        Container(
+          child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  Text('Pourquoi ',
+                      style: GoogleFonts.lobsterTwo(fontSize: 56)),
+                  Text('sommes-nous ',
+                      style: GoogleFonts.lobsterTwo(fontSize: 56)),
+                  Text(
+                    'les meilleurs  ',
+                    style: GoogleFonts.lobsterTwo(fontSize: 56),
+                  ),
+                  Text(
+                    'de tous ?',
+                    style: GoogleFonts.lobsterTwo(fontSize: 56),
+                  ),
+                ],
+              )),
         ),
-      ),
+        // Container(
+        //   padding: EdgeInsets.all(10),
+        //   //width: 500,
+        //   //height: 100,
+        //   decoration: BoxDecoration(
+        //       color: Colors.teal[200],
+        //       borderRadius: BorderRadius.circular(25)),
+        //   child: Constnt(
+        //     icone: Icon(Icons.supervised_user_circle_rounded),
+        //     a: "Enseignants Qualifiés",
+        //     b: "Nôtre qualité d’enseignement provient du choix judicieux des enseignants qui eux sont formés dans les plus grandes universités internationales... ",
+        //   ),
+        // ),
+        CertificationBox(
+          title: "Test d’entrée",
+          content:
+              'La sélection par le test nous assure du bagage intellectuel que possède tous nos collégiens afin de leur assurer un meilleur suivie académique...',
+          icons: Icons.event,
+        ),
+        CertificationBox(
+          title: "Curriculium-Vitae",
+          content:
+              'Pendant l’année académique chaque collégiens a droit a une formations cerrtifiante jusqu’au baccalauréat ,ce qui compte environ 7 certifications ...',
+          icons: Icons.monitor_heart,
+        ),
+        CertificationBox(
+          title: "Certifications",
+          content:
+              'Pendant l’année académique chaque collégiens a droit a une formations cerrtifiante jusqu’au baccalauréat ,ce qui compte environ 7 certifications ...',
+          icons: Icons.school,
+        ),
+        CertificationBox(
+          title: "Meilleur Investissement",
+          content:
+              'Notre établissement considère la curcuse de vôtre enfant comme un investissement correct qui aura un retour sur investissement certain ...',
+          icons: Icons.verified_user,
+        ),
+        // Container(
+        //   width: 100,
+        //   height: 100,
+        //   decoration: BoxDecoration(
+        //     color: Colors.teal[300],
+        //     borderRadius: BorderRadius.circular(25),
+        //   ),
+        //   padding: const EdgeInsets.all(10),
+        //   child: Constnt(
+        //     icone: Icon(Icons.abc),
+        //     a: "Test d’entrée",
+        //     b: 'La sélection par le test nous assure du bagage intellectuel que possède tous nos collégiens afin de leur assurer un meilleur suivie académique...',
+        //   ),
+        // ),
+        // Container(
+        //   width: 100,
+        //   height: 100,
+        //   decoration: BoxDecoration(
+        //     color: Colors.teal[400],
+        //     borderRadius: BorderRadius.circular(25),
+        //   ),
+        //   padding: const EdgeInsets.all(10),
+        //   child: Constnt(
+        //     icone: Icon(Icons.health_and_safety),
+        //     a: "Curriculium-Vitae",
+        //     b: 'Le suivie de la santé de nos collégiens sont partie du fondements de notre établissement.C’est en celà l’un de nos secrets de réussite...',
+        //   ),
+        // ),
+        // Container(
+        //   width: 100,
+        //   height: 100,
+        //   decoration: BoxDecoration(
+        //     color: Colors.teal[500],
+        //     borderRadius: BorderRadius.circular(25),
+        //   ),
+        //   padding: const EdgeInsets.all(10),
+        //   child: Constnt(
+        //     icone: Icon(Icons.circle_notifications),
+        //     a: "Certifications",
+        //     b: 'Pendant l’année académique chaque collégiens a droit a une formations cerrtifiante jusqu’au baccalauréat ,ce qui compte environ 7 certifications ...',
+        //   ),
+        // ),
+        // Container(
+        //   padding: EdgeInsets.all(10),
+        //   width: 100,
+        //   height: 100,
+        //   decoration: BoxDecoration(
+        //     color: Colors.teal[600],
+        //     borderRadius: BorderRadius.circular(25),
+        //   ),
+        //   child: Constnt(
+        //     icone: Icon(Icons.abc),
+        //     a: "Meilleur Investissement",
+        //     b: 'Notre établissement considère la curcuse de vôtre enfant comme un investissement correct qui aura un retour sur investissement certain ...',
+        //   ),
+        // ),
+      ],
     );
   }
 }
@@ -133,8 +149,8 @@ class Constnt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
-      height: 150,
+      width: 300,
+      height: 200,
       decoration: BoxDecoration(
         color: Colors.brown,
       ),
@@ -187,7 +203,7 @@ class Constnte extends StatelessWidget {
       width: 300,
       height: 320,
       decoration: BoxDecoration(
-        color: Colors.brown,
+        color: colorBlue,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -197,9 +213,9 @@ class Constnte extends StatelessWidget {
               Container(
                 width: 230,
                 height: 320,
-                decoration: BoxDecoration(
-                  color: Colors.teal[200],
-                ),
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    border: Border(top: BorderSide(), bottom: BorderSide())),
                 child: Column(
                   children: [
                     Text(
@@ -230,30 +246,30 @@ class Constnte extends StatelessWidget {
 
 class Constante extends StatelessWidget {
   Constante({super.key, required this.img, required this.a, required this.p});
-  final Widget img;
+  final String img;
   String a;
   double p;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: p),
-      decoration: BoxDecoration(
-        color: Colors.red,
-      ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CircleAvatar(
-            backgroundImage: AssetImage("assets/images/terrain.jpg"),
-            radius: 130,
+          Flexible(
+            flex: 2,
+            child: CircleAvatar(
+              backgroundImage: AssetImage(img),
+              radius: 90,
+            ),
           ),
           SizedBox(width: 5),
-          Container(
-              width: 400,
-              height: 340,
-              decoration: BoxDecoration(
-                color: Colors.brown,
-              ),
-              child: Text(a, style: Styl))
+          Flexible(
+            flex: 2,
+            child: Container(
+                width: 200,
+                child: Text(a, style: GoogleFonts.lobsterTwo(fontSize: 19))),
+          )
         ],
       ),
     );
@@ -265,37 +281,89 @@ class Conteneur extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: Color.fromRGBO(166, 31, 56, 0.58)),
+      decoration: BoxDecoration(color: colorBlue),
       child: Container(
         width: double.infinity,
-        height: 150,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("Nous Contacter",
-                style:
-                    GoogleFonts.lobsterTwo(fontSize: 34, color: Colors.white)),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 178.0),
-                  child: Text("Nos liens",
-                      style: GoogleFonts.lobsterTwo(
-                          fontSize: 30, color: Colors.white)),
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 1150.0),
-                  child: Text(
-                    "Inscription",
-                    style: GoogleFonts.lobsterTwo(
-                        fontSize: 20, color: Colors.amber),
+                Container(
+                  child: Row(
+                    children: [
+                      Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      "assets/images/notredame.png")))),
+                      Container(
+                        child: Text(
+                          "NOTRE\nDAME DE PAIX",
+                          style: GoogleFonts.karma(
+                              fontSize: 19, color: Colors.white),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                //Text("",style: GoogleFonts.lobsterTwo(fontSize:20),),
-                //Text("",style: GoogleFonts.lobsterTwo(fontSize:20),),
+                // Row(
+                //   children: [
+                //     Icon(Icons.add_call),
+                //     Icon(Icons.add_call),
+                //     Icon(Icons.add_call),
+                //     Icon(Icons.add_call),
+                //   ],
+                // )
+              ],
+            ),
+            Divider(
+              color: Colors.white,
+              thickness: 0.5,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Nos liens",
+                        style: GoogleFonts.lobsterTwo(
+                            fontSize: 20, color: Colors.white)),
+                    Text(
+                      "Inscription",
+                      style: GoogleFonts.lobsterTwo(
+                          fontSize: 20, color: Colors.amber),
+                    ),
+                    Text(
+                      "Inscription",
+                      style: GoogleFonts.lobsterTwo(
+                          fontSize: 20, color: Colors.amber),
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Site internet de l’école : notredamedepaix@educ.ci",
+                        style: GoogleFonts.lobsterTwo(
+                            fontSize: 20, color: Colors.white)),
+                    Text(
+                      "Addresse : 01 BP Abidjan 01",
+                      style: GoogleFonts.lobsterTwo(
+                          fontSize: 20, color: Colors.amber),
+                    ),
+                    Text(
+                      "Sécrétariat : Inscription +225 0 234 234 / +225 0 800 800",
+                      style: GoogleFonts.lobsterTwo(
+                          fontSize: 20, color: Colors.amber),
+                    ),
+                  ],
+                ),
               ],
             ),
             SizedBox(
@@ -309,19 +377,30 @@ class Conteneur extends StatelessWidget {
 }
 
 class Columnn extends StatelessWidget {
-  Columnn({super.key, required this.a, required this.b});
-  String a, b;
+  Columnn({super.key, required this.a, required this.b, required this.c});
+  String a, b, c;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          a,
-          style: GoogleFonts.lobsterTwo(fontSize: 40, color: Colors.white),
+        RichText(
+          text: TextSpan(
+            text: a,
+            style: const TextStyle(
+                fontSize: 40, color: Colors.white, fontWeight: FontWeight.bold),
+            children: <TextSpan>[
+              TextSpan(
+                  text: b,
+                  style: const TextStyle(
+                      fontSize: 40,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold)),
+            ],
+          ),
         ),
         Text(
-          b,
-          style: GoogleFonts.lobsterTwo(fontSize: 30, color: Colors.white),
+          c,
+          style: TextStyle(fontSize: 20, color: Colors.white),
         )
       ],
     );
@@ -401,6 +480,56 @@ class LigneB extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class CertificationBox extends StatelessWidget {
+  String title;
+  String content;
+  IconData icons;
+  CertificationBox(
+      {super.key,
+      required this.title,
+      required this.content,
+      required this.icons});
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      child: Container(
+        padding: EdgeInsets.all(10),
+        height: 300,
+        width: 300,
+        decoration: BoxDecoration(
+            color: Color.fromARGB(255, 233, 233, 233),
+            borderRadius: BorderRadius.circular(20)),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Container(
+            padding: EdgeInsets.all(3),
+            decoration: BoxDecoration(
+                color: Colors.amber, borderRadius: BorderRadius.circular(70)),
+            child: CircleAvatar(
+              backgroundColor: Color.fromARGB(255, 242, 227, 217),
+              child: Icon(
+                icons,
+                size: 50,
+                color: colorsRed,
+              ),
+              radius: 40,
+            ),
+          ),
+          Text(
+            title,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+          ),
+          Text(
+            content,
+            style: GoogleFonts.lobsterTwo(fontSize: 24),
+          )
+        ]),
+      ),
+      onHover: (value) {},
+      onTap: () {},
     );
   }
 }
