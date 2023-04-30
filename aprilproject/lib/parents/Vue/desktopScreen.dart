@@ -88,12 +88,40 @@ class DesktopScaffold extends StatelessWidget {
                   color: Colors.amber,
                   child: FittedBox(
                       child: Container(
-                    color: colorsRed,
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                    child: Text("Notre projet ?",
-                        style: GoogleFonts.montserrat(
-                            fontSize: 19, color: Colors.white)),
-                  )),
+                          color: colorsRed,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 20),
+                          child:
+                              // Text("Notre projet ?",
+                              //     style: GoogleFonts.montserrat(
+                              //         fontSize: 19, color: Colors.white)),
+                              Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              const SizedBox(width: 30.0, height: 50.0),
+                              const Text(
+                                'Be',
+                                style: TextStyle(fontSize: 19.0),
+                              ),
+                              const SizedBox(width: 30.0, height: 50.0),
+                              DefaultTextStyle(
+                                style: const TextStyle(
+                                  fontSize: 19,
+                                  fontFamily: 'Horizon',
+                                ),
+                                child: AnimatedTextKit(
+                                  animatedTexts: [
+                                    RotateAnimatedText('AWESOME'),
+                                    RotateAnimatedText('OPTIMISTIC'),
+                                    RotateAnimatedText('DIFFERENT'),
+                                  ],
+                                  onTap: () {
+                                    print("Tap Event");
+                                  },
+                                ),
+                              ),
+                            ],
+                          ))),
                 ),
               ),
             ],
@@ -166,8 +194,8 @@ class DesktopScaffold extends StatelessWidget {
                 children: [
                   Constnte(
                     img: Image.asset("assets/images/img collegienne.jpg"),
-                    a: "LOLA",
-                    b: "OL",
+                    a: "CISSE",
+                    b: "Aude Marilyne",
                     c: '1er cycle(Collège)',
                   ),
                   SizedBox(
@@ -175,8 +203,8 @@ class DesktopScaffold extends StatelessWidget {
                   ),
                   Constnte(
                     img: Image.asset("assets/images/img collegienne.jpg"),
-                    a: "LOLA",
-                    b: "OL",
+                    a: "ABEDIE",
+                    b: "Marie Oshée",
                     c: '2ème cycle(Lycée)',
                   ),
                 ],

@@ -1,3 +1,4 @@
+import 'package:aprilproject/parents/Vue/acceuil.dart';
 import 'package:flutter/material.dart';
 import 'package:aprilproject/Professeur/HomePage.dart';
 import "package:aprilproject/Professeur/ProgramOfDay.dart";
@@ -46,6 +47,6 @@ class MyApp extends StatelessWidget {
         //   tabletScaffold: TabletScaffold(),
         //   desktopScaffold: DesktopScaffold(),
         // ));
-        home: DesktopScaffold());
+        home: Acceuil());
   }
 }

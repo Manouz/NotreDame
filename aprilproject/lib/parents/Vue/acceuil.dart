@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:aprilproject/parents/Vue/Model/model.dart';
 import 'package:aprilproject/parents/Vue/desktopScreen.dart';
 import 'package:aprilproject/Professeur/LoginPage.dart';
+import 'package:aprilproject/ColorsPanel.dart';
 
 class Acceuil extends StatelessWidget {
   Acceuil({super.key});
@@ -11,188 +12,177 @@ class Acceuil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(),
-        body: SingleChildScrollView(
-            child: Column(children: [
-      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Image(image: AssetImage("assets/images/notredame.png")),
-            SizedBox(
-                width: 1, child: Container(height: 80, color: Colors.black)),
-            SizedBox(
-                height: 90,
-                child: Column(children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10.0, left: 4),
-                    child: Text(
-                      "NOTRE\nDAME DE PAIX",
-                      style: GoogleFonts.karma(fontSize: 26),
+        appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 13, 63, 104),
+          toolbarHeight: 80,
+          elevation: 0,
+          automaticallyImplyLeading: false,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: Row(
+                  children: [
+                    Container(
+                        height: 70,
+                        width: 70,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/images/notredame.png")))),
+                    SizedBox(
+                        width: 1,
+                        child: Container(height: 80, color: Colors.white)),
+                    Container(
+                      child: Text(
+                        "NOTRE\nDAME DE PAIX",
+                        style: GoogleFonts.karma(fontSize: 22),
+                      ),
                     ),
-                  ),
-                ])),
-          ],
-        ),
-        Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: Container(
-                width: 140,
-                height: 40,
-                decoration: BoxDecoration(
-                    color: colors, borderRadius: BorderRadius.circular(30)),
-                child: InkWell(
-                  onTap: () {
+                  ],
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            Row(
+              children: [
+                TextButton(
+                  onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (builder) => DesktopScaffold()));
+                            builder: (Context) => DesktopScaffold()));
                   },
                   child: Center(
                       child: Text("Acceuil",
-                          style: GoogleFonts.kalam(
-                              fontSize: 18, color: Colors.white))),
+                          style: GoogleFonts.montserrat(
+                              fontSize: 19, color: Colors.white))),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: Container(
-                width: 140,
-                height: 40,
-                decoration: BoxDecoration(
-                    color: colors, borderRadius: BorderRadius.circular(30)),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (builder) => DesktopScaffold()));
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (Context) => Acceuil()));
                   },
                   child: Center(
                       child: Text("Visite Guidée",
-                          style: GoogleFonts.kalam(
-                              fontSize: 18, color: Colors.white))),
+                          style: GoogleFonts.montserrat(
+                              fontSize: 19, color: Colors.white))),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: Container(
-                width: 140,
-                height: 40,
-                decoration: BoxDecoration(
-                    color: colors, borderRadius: BorderRadius.circular(30)),
-                child: InkWell(
-                  onTap: () {
+                TextButton(
+                  onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (builder) => LoginPage()));
+                        MaterialPageRoute(builder: (Context) => LoginPage()));
                   },
                   child: Center(
                       child: Text("Connexion",
-                          style: GoogleFonts.kalam(
-                              fontSize: 18, color: Colors.white))),
+                          style: GoogleFonts.montserrat(
+                              fontSize: 19, color: Colors.white))),
                 ),
-              ),
-            )
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (Context) => Acceuil()));
+                  },
+                  child: Container(
+                    color: Colors.amber,
+                    child: FittedBox(
+                        child: Container(
+                      color: colorsRed,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                      child: Text("Notre projet ?",
+                          style: GoogleFonts.montserrat(
+                              fontSize: 19, color: Colors.white)),
+                    )),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: 5,
+            ),
           ],
         ),
-      ]),
-      Row(
-        children: [
-          Stack(children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 458.0),
-              child: Container(
-                width: 830,
-                height: 500,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/ecole.jpg"),
-                      fit: BoxFit.cover),
-                  //child: Image.asset()
+        body: SingleChildScrollView(
+            child: Column(children: [
+          Row(
+            children: [
+              Stack(children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 458.0),
+                  child: Container(
+                    width: 830,
+                    height: 500,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/ecole.jpg"),
+                          fit: BoxFit.cover),
+                      //child: Image.asset()
+                    ),
+                  ),
                 ),
-              ),
+                Container(
+                    margin: const EdgeInsets.only(left: 39.0, top: 27),
+                    padding: EdgeInsets.all(10),
+                    width: 450,
+                    decoration: BoxDecoration(color: colorsRed),
+                    child: Text(
+                      " Crée en 1970 par une communauté Catholique,Nôtre Dame de Paix est l’un des meilleurs établissement qui prône de nos jours des valeurs chrétienne et morale basés sur les saintes écritures.  ",
+                      style: GoogleFonts.lobsterTwo(
+                          fontSize: 40, color: Colors.white),
+                    )),
+              ]),
+            ],
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Center(
+            child: Text(
+              "Visite guidée au sein de l’établissement",
+              style: GoogleFonts.lobsterTwo(fontSize: 60),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 39.0, top: 27),
-              child: Container(
-                  width: 450,
-                  height: 450,
-                  decoration: BoxDecoration(color: Colors.amber),
-                  child: Text(
-                    " Crée en 1970 par une communauté Catholique,Nôtre Dame de Paix est l’un des meilleurs établissement qui prône de nos jours des valeurs chrétienne et morale basés sur les saintes écritures.  ",
-                    style: GoogleFonts.lobsterTwo(fontSize: 45),
-                  )),
+          ),
+          SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Container(
+              //width: 1200,
+              //height: 1700,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Color.fromRGBO(219, 217, 217, 0.5)),
+              child: Column(children: [
+                LigneA(
+                    a: "assets/images/klc.jpg",
+                    b: "Les salles de classe propre,\nsaines et confortable ,\ntoutes ses qualités pour assurer\n la suivie des aprennants"),
+                LigneB(
+                    a: "assets/images/klc.jpg",
+                    b: "Une quantine fonctionnelle ,suivie par des nutritionnistes articuliers ,afin de servir aux apprenant des vitamines neccessaire à leur santé."),
+                LigneA(
+                    a: "assets/images/kntine.jpg",
+                    b: "Un réfectoire  harmonisé de sorte à regrouper toute la jeunesse autour du repas de leur choix,mais qui est régit par des règles dont l’apprenant devrai s’impregner"),
+                LigneB(
+                    a: "assets/images/ps.jpg",
+                    b: "Une grande piscine de 500 mètres où se déroules toutes compétitions liés à la natation et les cours de natation académique.Chaque années nous organisons une compétion régionale au sein de l’établissement"),
+                LigneA(
+                    a: "assets/images/terrain.jpg",
+                    b: "Un terrain de sport de 500 mètres où se déroules certaines activités sportives que sont les compétitions inter classe et extra école de football et les cours de sport académique."),
+              ]),
             ),
-          ]),
-        ],
-      ),
-      SizedBox(
-        height: 30,
-      ),
-      Center(
-        child: Text(
-          "Visite guidée au sein de l’établissement",
-          style: GoogleFonts.lobsterTwo(fontSize: 60),
-        ),
-      ),
-      SizedBox(height: 10),
-      Padding(
-        padding: const EdgeInsets.only(left: 50.0, right: 50),
-        child: Container(
-          //width: 1200,
-          //height: 1700,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: Color.fromRGBO(219, 217, 217, 0.5)),
-          child: Column(children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: LigneA(
-                  a: "assets/images/klc.jpg",
-                  b: "Les salles de classe propre,\nsaines et confortable ,\ntoutes ses qualités pour assurer\n la suivie des aprennants"),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: LigneB(
-                  a: "assets/images/klc.jpg",
-                  b: "Une quantine fonctionnelle ,suivie par des nutritionnistes articuliers ,afin de servir aux apprenant des vitamines neccessaire à leur santé."),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: LigneA(
-                  a: "assets/images/kntine.jpg",
-                  b: "Un réfectoire  harmonisé de sorte à regrouper toute la jeunesse autour du repas de leur choix,mais qui est régit par des règles dont l’apprenant devrai s’impregner"),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0),
-              child: LigneB(
-                  a: "assets/images/ps.jpg",
-                  b: "Une grande piscine de 500 mètres où se déroules toutes compétitions liés à la natation et les cours de natation académique.Chaque années nous organisons une compétion régionale au sein de l’établissement"),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10.0, bottom: 20),
-              child: LigneA(
-                  a: "assets/images/terrain.jpg",
-                  b: "Un terrain de sport de 500 mètres où se déroules certaines activités sportives que sont les compétitions inter classe et extra école de football et les cours de sport académique."),
-            ),
-          ]),
-        ),
-      ),
-      SizedBox(
-        height: 20,
-      ),
-      LigneA(
-          a: "assets/images/educateurs.jpg",
-          b: 'Nous mettons en oeuvre tout nôtre savoir faire éducationnel pour que nos apprenants soient motivés et donnent le meilleur d’eux.\n                  Signature des encadreurs'),
-      SizedBox(
-        height: 20,
-      ),
-      Conteneur()
-    ])));
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          LigneA(
+              a: "assets/images/educateurs.jpg",
+              b: 'Nous mettons en oeuvre tout nôtre savoir faire éducationnel pour que nos apprenants soient motivés et donnent le meilleur d’eux.\n                  Signature des encadreurs'),
+          SizedBox(
+            height: 20,
+          ),
+          Conteneur()
+        ])));
   }
 }
        
