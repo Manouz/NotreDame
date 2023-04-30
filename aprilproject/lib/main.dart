@@ -41,10 +41,11 @@ class MyApp extends StatelessWidget {
         //     tabletBody: const TabletHomePage(),
         //     desktopBody: const HomePage()));
         //ok
-        home: ResponsiveLayouts(
-          mobileScaffold: MobileScaffold(),
-          tabletScaffold: TabletScaffold(),
-          desktopScaffold: DesktopScaffold(),
-        ));
+        // home: ResponsiveLayouts(
+        //   mobileScaffold: MobileScaffold(),
+        //   tabletScaffold: TabletScaffold(),
+        //   desktopScaffold: DesktopScaffold(),
+        // ));
+        home: DesktopScaffold());
   }
 }
