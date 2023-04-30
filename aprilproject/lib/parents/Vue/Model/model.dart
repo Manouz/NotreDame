@@ -252,7 +252,6 @@ class Constante extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: p),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -266,6 +265,7 @@ class Constante extends StatelessWidget {
           SizedBox(width: 5),
           Flexible(
             flex: 2,
+            fit: FlexFit.loose,
             child: Container(
                 width: 200,
                 child: Text(a, style: GoogleFonts.lobsterTwo(fontSize: 19))),
@@ -418,26 +418,29 @@ class LigneA extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          child: Image.asset(
-            a,
-            width: 450,
+        Flexible(
+          flex: 1,
+          child: Container(
+            width: 400,
+            height: 300,
+            decoration: BoxDecoration(
+                color: Colors.amber,
+                image: DecorationImage(image: AssetImage(a), fit: BoxFit.cover),
+                borderRadius: BorderRadius.circular(20)),
           ),
         ),
         //SizedBox(width: 20),
-        ClipRRect(
+        Flexible(
+          flex: 1,
           child: Container(
+            width: 400,
+            padding: EdgeInsets.all(8.0),
             //color: Colors.amber,
-            width: 560,
-            height: 300,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 18.0),
-              child: Text(
-                b,
-                style: GoogleFonts.lobsterTwo(fontSize: 40),
-              ),
+            child: Text(
+              b,
+              style: GoogleFonts.lobsterTwo(fontSize: 21),
             ),
           ),
         )
@@ -457,28 +460,31 @@ class LigneB extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
       children: [
-        ClipRRect(
+        Flexible(
+          flex: 1,
           child: Container(
+            width: 400,
+            padding: EdgeInsets.all(8.0),
             //color: Colors.amber,
-            width: 560,
-            height: 300,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 18.0),
-              child: Text(
-                b,
-                style: GoogleFonts.lobsterTwo(fontSize: 40),
-              ),
+            child: Text(
+              b,
+              style: GoogleFonts.lobsterTwo(fontSize: 21),
             ),
           ),
         ),
-        ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          child: Image.asset(
-            a,
-            width: 450,
+        Flexible(
+          flex: 1,
+          child: Container(
+            width: 400,
+            height: 300,
+            decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage(a), fit: BoxFit.cover),
+                borderRadius: BorderRadius.circular(20)),
           ),
-        ),
+        )
+        //SizedBox(width: 20),
       ],
     );
   }
