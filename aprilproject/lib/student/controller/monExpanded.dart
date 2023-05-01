@@ -58,7 +58,8 @@ class monExpanded extends StatelessWidget {
                               width: MediaQuery.of(context).size.width / 7.2,
                               decoration: BoxDecoration(
                                   image: const DecorationImage(
-                                      image: AssetImage("images/papier.jpeg"),
+                                      image: AssetImage(
+                                          "assets/images/papier.jpeg"),
                                       fit: BoxFit.cover),
                                   borderRadius: BorderRadius.circular(20)),
                               child: Padding(

@@ -1,4 +1,5 @@
 import 'package:aprilproject/parents/Vue/acceuil.dart';
+import 'package:aprilproject/student/ResponsivePage/PageHomeRes.dart';
 import 'package:flutter/material.dart';
 import 'package:aprilproject/Professeur/HomePage.dart';
 import "package:aprilproject/Professeur/ProgramOfDay.dart";
@@ -10,6 +11,8 @@ import 'package:aprilproject/parents/Vue/MobileScreen.dart';
 import 'package:aprilproject/parents/Vue/TabletScreen.dart';
 import 'package:aprilproject/parents/Vue/desktopScreen.dart';
 import 'package:aprilproject/parents/Vue/Controleur/responsivelayout.dart';
+
+import 'student/view/homePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,6 +50,8 @@ class MyApp extends StatelessWidget {
         //   tabletScaffold: TabletScaffold(),
         //   desktopScaffold: DesktopScaffold(),
         // ));
-        home: Acceuil());
+        // home: Acceuil());
+        home: DesktopScaffold());
+    // home: const MyHomePage());
   }
 }

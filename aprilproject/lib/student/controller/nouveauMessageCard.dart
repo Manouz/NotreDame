@@ -23,8 +23,8 @@ class _nouvaeuxMessageCardState extends State<nouvaeuxMessageCard> {
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Container(
-          width: MediaQuery.of(context).size.width / 3,
-          height: MediaQuery.of(context).size.width / 5.7,
+          // width: MediaQuery.of(context).size.width / 3,
+          // height: MediaQuery.of(context).size.width / 5.7,
           child: InkWell(
             onTap: () {
               /* Navigator.push(context,
@@ -47,8 +47,8 @@ class _nouvaeuxMessageCardState extends State<nouvaeuxMessageCard> {
                       children: [
                         CircleAvatar(
                           radius: 25,
-                          foregroundImage:
-                              AssetImage("images/${messages.imageAuteur}"),
+                          foregroundImage: AssetImage(
+                              "assets/images/${messages.imageAuteur}"),
                         ),
                         const SizedBox(
                           width: 10,

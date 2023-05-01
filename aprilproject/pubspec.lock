@@ -17,6 +17,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
+  auto_size_text:
+    dependency: "direct main"
+    description:
+      name: auto_size_text
+      sha256: "3f5261cd3fb5f2a9ab4e2fc3fba84fd9fcaac8821f20a1d4e71f557521b22599"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -110,6 +118,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_adaptive_scaffold:
+    dependency: "direct main"
+    description:
+      name: flutter_adaptive_scaffold
+      sha256: f9482e41adaf26d6fa9de02b605adc346961cb4bb34fe9420335df591ce3de6d
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.3"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -195,6 +211,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.0"
+  no_context_navigation:
+    dependency: "direct main"
+    description:
+      name: no_context_navigation
+      sha256: "8bf0549c9c06cee77182a70e4a6a982fcb2d0d1dc06e712295f2c69a56fe3e19"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.2"
   path:
     dependency: transitive
     description:

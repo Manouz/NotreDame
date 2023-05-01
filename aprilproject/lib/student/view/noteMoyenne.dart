@@ -34,7 +34,8 @@ class _NoteEtMoyenneState extends State<NoteEtMoyenne>
     NoteMoyenne(
         leContenu: const DeuxiemeTrim(),
         longlet: "2ème Trimestre",
-        laMoyenneDuTRim: const Text('MOY TRIM: ${(10 + 12 + 15 + 02 + 12 + 8 + 12 + 12 + 18 + 12 + 12 + 18 + 17 + 12 + 18 + 1 + 12 + 18 + 12 + 12 + 18 + 12 + 2 + 1 + 12 + 12 + 18) / 9}',
+        laMoyenneDuTRim: const Text(
+            'MOY TRIM: ${(10 + 12 + 15 + 02 + 12 + 8 + 12 + 12 + 18 + 12 + 12 + 18 + 17 + 12 + 18 + 1 + 12 + 18 + 12 + 12 + 18 + 12 + 2 + 1 + 12 + 12 + 18) / 9}',
             style: TextStyle(
                 color: Colors.red, fontSize: 20, fontWeight: FontWeight.bold)),
         leRang: const Text('RANG: ...',
@@ -43,7 +44,8 @@ class _NoteEtMoyenneState extends State<NoteEtMoyenne>
     NoteMoyenne(
         leContenu: const TroisiemeTrim(),
         longlet: "3ème Trimestre",
-        laMoyenneDuTRim: const Text('MOY TRIM: ${(10 + 12 + 15 + 02 + 12 + 8 + 12 + 12 + 18 + 12 + 12 + 18 + 17 + 12 + 18 + 1 + 12 + 18 + 12 + 12 + 18 + 12 + 2 + 1 + 12 + 12 + 18) / 9}',
+        laMoyenneDuTRim: const Text(
+            'MOY TRIM: ${(10 + 12 + 15 + 02 + 12 + 8 + 12 + 12 + 18 + 12 + 12 + 18 + 17 + 12 + 18 + 1 + 12 + 18 + 12 + 12 + 18 + 12 + 2 + 1 + 12 + 12 + 18) / 9}',
             style: TextStyle(
                 color: Colors.red, fontSize: 20, fontWeight: FontWeight.bold)),
         leRang: const Text('RANG: ...',

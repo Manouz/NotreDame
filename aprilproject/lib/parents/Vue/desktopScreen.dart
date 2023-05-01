@@ -6,6 +6,7 @@ import 'package:aprilproject/parents/Vue/acceuil.dart';
 import 'package:aprilproject/parents/Vue/parents.dart';
 import 'package:aprilproject/Professeur/LoginPage.dart';
 import 'package:aprilproject/ColorsPanel.dart';
+import 'package:aprilproject/student/ResponsivePage/PageHomeRes.dart';
 
 class DesktopScaffold extends StatelessWidget {
   DesktopScaffold({super.key});
@@ -14,125 +15,11 @@ class DesktopScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 13, 63, 104),
-        toolbarHeight: 80,
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              child: Row(
-                children: [
-                  Container(
-                      height: 70,
-                      width: 70,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image:
-                                  AssetImage("assets/images/notredame.png")))),
-                  SizedBox(
-                      width: 1,
-                      child: Container(height: 80, color: Colors.white)),
-                  Container(
-                    child: Text(
-                      "NOTRE\nDAME DE PAIX",
-                      style: GoogleFonts.karma(fontSize: 22),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          Row(
-            children: [
-              TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (Context) => Acceuil()));
-                },
-                child: Center(
-                    child: Text("Acceuil",
-                        style: GoogleFonts.montserrat(
-                            fontSize: 19, color: Colors.white))),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (Context) => Acceuil()));
-                },
-                child: Center(
-                    child: Text("Visite Guidée",
-                        style: GoogleFonts.montserrat(
-                            fontSize: 19, color: Colors.white))),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (Context) => LoginPage()));
-                },
-                child: Center(
-                    child: Text("Connexion",
-                        style: GoogleFonts.montserrat(
-                            fontSize: 19, color: Colors.white))),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (Context) => Acceuil()));
-                },
-                child: Container(
-                  color: Colors.amber,
-                  child: FittedBox(
-                      child: Container(
-                          color: colorsRed,
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 20),
-                          child:
-                              // Text("Notre projet ?",
-                              //     style: GoogleFonts.montserrat(
-                              //         fontSize: 19, color: Colors.white)),
-                              Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              const SizedBox(width: 30.0, height: 50.0),
-                              // const Text(
-                              //   'Be',
-                              //   style: TextStyle(fontSize: 19.0),
-                              // ),
-                              SizedBox(
-                                  width: 100.0,
-                                  height: 50.0,
-                                  child: DefaultTextStyle(
-                                    style: const TextStyle(
-                                      fontSize: 19,
-                                      fontFamily: 'Horizon',
-                                    ),
-                                    child: AnimatedTextKit(
-                                      animatedTexts: [
-                                        RotateAnimatedText('DECOUVREZ'),
-                                        RotateAnimatedText('NOTRE'),
-                                        RotateAnimatedText('PROJET'),
-                                      ],
-                                      onTap: () {
-                                        print("Tap Event");
-                                      },
-                                    ),
-                                  )),
-                            ],
-                          ))),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            width: 5,
-          ),
-        ],
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(90),
+        child: MyAppBar(),
       ),
+      endDrawer: const MyDrawer(),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 8),
         child: SingleChildScrollView(
