@@ -1,9 +1,16 @@
+import 'package:aprilproject/Professeur/HomePage.dart';
+import 'package:aprilproject/parents/Vue/Controleur/responsivelayout.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:aprilproject/parents/Vue/Model/model.dart';
 import 'package:aprilproject/parents/Vue/desktopScreen.dart';
 import 'package:aprilproject/Professeur/LoginPage.dart';
 import 'package:aprilproject/ColorsPanel.dart';
+import 'package:aprilproject/ResponsiveMethod/responsive.dart';
+import 'package:aprilproject/student/ResponsivePage/PageHomeRes.dart';
+import 'package:no_context_navigation/no_context_navigation.dart';
+import 'package:aprilproject/student/ResponsivePage/TransitionPage.dart';
+import 'package:aprilproject/student/ResponsivePage/HomePageStud.dart';
 
 class Acceuil extends StatelessWidget {
   Acceuil({super.key});
@@ -12,165 +19,49 @@ class Acceuil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 13, 63, 104),
-          toolbarHeight: 80,
-          elevation: 0,
-          automaticallyImplyLeading: false,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: Row(
-                  children: [
-                    Container(
-                        height: 70,
-                        width: 70,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    "assets/images/notredame.png")))),
-                    SizedBox(
-                        width: 1,
-                        child: Container(height: 80, color: Colors.white)),
-                    Container(
-                      child: Text(
-                        "NOTRE\nDAME DE PAIX",
-                        style: GoogleFonts.karma(fontSize: 22),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          actions: [
-            Row(
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (Context) => DesktopScaffold()));
-                  },
-                  child: Center(
-                      child: Text("Acceuil",
-                          style: GoogleFonts.montserrat(
-                              fontSize: 19, color: Colors.white))),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (Context) => Acceuil()));
-                  },
-                  child: Center(
-                      child: Text("Visite Guidée",
-                          style: GoogleFonts.montserrat(
-                              fontSize: 19, color: Colors.white))),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (Context) => LoginPage()));
-                  },
-                  child: Center(
-                      child: Text("Connexion",
-                          style: GoogleFonts.montserrat(
-                              fontSize: 19, color: Colors.white))),
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (Context) => Acceuil()));
-                  },
-                  child: Container(
-                    color: Colors.amber,
-                    child: FittedBox(
-                        child: Container(
-                      color: colorsRed,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                      child: Text("Notre projet ?",
-                          style: GoogleFonts.montserrat(
-                              fontSize: 19, color: Colors.white)),
-                    )),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              width: 5,
-            ),
-          ],
+        appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(90),
+          child: MyAppBar(),
         ),
+        endDrawer: (Responsive.isMobile(context)) ? MyDrawer() : null,
         body: SingleChildScrollView(
             child: Column(children: [
-          Row(
-            children: [
-              Stack(children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 458.0),
-                  child: Container(
-                    width: 830,
-                    height: 500,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("assets/images/ecole.jpg"),
-                          fit: BoxFit.cover),
-                      //child: Image.asset()
-                    ),
-                  ),
-                ),
-                Container(
-                    margin: const EdgeInsets.only(left: 39.0, top: 27),
-                    padding: EdgeInsets.all(10),
-                    width: 450,
-                    decoration: BoxDecoration(color: colorsRed),
-                    child: Text(
-                      " Crée en 1970 par une communauté Catholique,Nôtre Dame de Paix est l’un des meilleurs établissement qui prône de nos jours des valeurs chrétienne et morale basés sur les saintes écritures.  ",
-                      style: GoogleFonts.lobsterTwo(
-                          fontSize: 40, color: Colors.white),
-                    )),
-              ]),
-            ],
-          ),
-          SizedBox(
-            height: 30,
-          ),
+          //________ Partie supérieur________
+          const EntetePage(),
+          //________ Fin partie supérieur________
+
           Center(
             child: Text(
               "Visite guidée au sein de l’établissement",
-              style: GoogleFonts.lobsterTwo(fontSize: 60),
+              style: GoogleFonts.lobsterTwo(
+                  fontSize: (Responsive.isMobile(context)) ? 40 : 60), //---
             ),
           ),
           SizedBox(height: 10),
-          Padding(
+          Container(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Container(
-              //width: 1200,
-              //height: 1700,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Color.fromRGBO(219, 217, 217, 0.5)),
-              child: Column(children: [
-                LigneA(
-                    a: "assets/images/klc.jpg",
-                    b: "Les salles de classe propre,\nsaines et confortable ,\ntoutes ses qualités pour assurer\n la suivie des aprennants"),
-                LigneB(
-                    a: "assets/images/klc.jpg",
-                    b: "Une quantine fonctionnelle ,suivie par des nutritionnistes articuliers ,afin de servir aux apprenant des vitamines neccessaire à leur santé."),
-                LigneA(
-                    a: "assets/images/kntine.jpg",
-                    b: "Un réfectoire  harmonisé de sorte à regrouper toute la jeunesse autour du repas de leur choix,mais qui est régit par des règles dont l’apprenant devrai s’impregner"),
-                LigneB(
-                    a: "assets/images/ps.jpg",
-                    b: "Une grande piscine de 500 mètres où se déroules toutes compétitions liés à la natation et les cours de natation académique.Chaque années nous organisons une compétion régionale au sein de l’établissement"),
-                LigneA(
-                    a: "assets/images/terrain.jpg",
-                    b: "Un terrain de sport de 500 mètres où se déroules certaines activités sportives que sont les compétitions inter classe et extra école de football et les cours de sport académique."),
-              ]),
-            ),
+            //width: 1200,
+            //height: 1700,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: Color.fromRGBO(219, 217, 217, 0.5)),
+            child: Column(children: [
+              LigneA(
+                  a: "assets/images/klc.jpg",
+                  b: "Les salles de classe propre,\nsaines et confortable ,\ntoutes ses qualités pour assurer\n la suivie des aprennants"),
+              LigneB(
+                  a: "assets/images/klc.jpg",
+                  b: "Une quantine fonctionnelle ,suivie par des nutritionnistes articuliers ,afin de servir aux apprenant des vitamines neccessaire à leur santé."),
+              LigneA(
+                  a: "assets/images/kntine.jpg",
+                  b: "Un réfectoire  harmonisé de sorte à regrouper toute la jeunesse autour du repas de leur choix,mais qui est régit par des règles dont l’apprenant devrai s’impregner"),
+              LigneB(
+                  a: "assets/images/ps.jpg",
+                  b: "Une grande piscine de 500 mètres où se déroules toutes compétitions liés à la natation et les cours de natation académique.Chaque années nous organisons une compétion régionale au sein de l’établissement"),
+              LigneA(
+                  a: "assets/images/terrain.jpg",
+                  b: "Un terrain de sport de 500 mètres où se déroules certaines activités sportives que sont les compétitions inter classe et extra école de football et les cours de sport académique."),
+            ]),
           ),
           SizedBox(
             height: 20,
@@ -183,6 +74,414 @@ class Acceuil extends StatelessWidget {
           ),
           Conteneur()
         ])));
+  }
+}
+
+class MyDrawer extends StatelessWidget {
+  const MyDrawer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      backgroundColor: colorBlue,
+      child: Column(
+        children: [
+          TextButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (Context) => DesktopScaffold()));
+            },
+            child: Center(
+                child: Text("Acceuil",
+                    style: GoogleFonts.montserrat(
+                        fontSize: 19, color: Colors.white))),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (Context) => Acceuil()));
+            },
+            child: Center(
+                child: Text("Visite Guidée",
+                    style: GoogleFonts.montserrat(
+                        fontSize: 19, color: Colors.white))),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (Context) => HomePage()));
+            },
+            child: Center(
+                child: Text("Connexion",
+                    style: GoogleFonts.montserrat(
+                        fontSize: 19, color: Colors.white))),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (Context) => Acceuil()));
+            },
+            child: Container(
+              color: Colors.amber,
+              child: FittedBox(
+                  child: Container(
+                color: colorsRed,
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                child: Text("Notre projet ?",
+                    style: GoogleFonts.montserrat(
+                        fontSize: 19, color: Colors.white)),
+              )),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class EntetePage extends StatelessWidget {
+  const EntetePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    //-------Responsive Entête Tablet ---------
+    if (Responsive.isDesktop(context)) {
+      return Container(
+        padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 10),
+        child: Stack(alignment: Alignment.center, children: [
+          Align(
+            alignment: Alignment.centerRight,
+            child: Container(
+              width: 830,
+              height: 500,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/ecole.jpg"),
+                      fit: BoxFit.cover),
+                  borderRadius: BorderRadius.circular(10)),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+                padding: EdgeInsets.all(10),
+                width: 450,
+                decoration: BoxDecoration(
+                    color: colorsRed, borderRadius: BorderRadius.circular(10)),
+                child: Text(
+                  " Crée en 1970 par une communauté Catholique,Nôtre Dame de Paix est l’un des meilleurs établissement qui prône de nos jours des valeurs chrétienne et morale basés sur les saintes écritures.  ",
+                  style:
+                      GoogleFonts.lobsterTwo(fontSize: 40, color: Colors.white),
+                )),
+          ),
+        ]),
+      );
+    }
+
+    //-------Responsive Entête Tablet ---------
+    else if (Responsive.isTablet(context)) {
+      return Container(
+        padding: const EdgeInsets.symmetric(
+            horizontal: 30, vertical: 5), //-- horizontal & vertical
+        child: Stack(alignment: Alignment.center, children: [
+          Align(
+            alignment: Alignment.centerRight,
+            child: Container(
+              width: 730, //--
+              height: 400, //--
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/ecole.jpg"),
+                      fit: BoxFit.cover),
+                  borderRadius: BorderRadius.circular(10)),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+                padding: EdgeInsets.all(10),
+                width: 350, //--
+                decoration: BoxDecoration(
+                    color: colorsRed, borderRadius: BorderRadius.circular(10)),
+                child: Text(
+                  " Crée en 1970 par une communauté Catholique,Nôtre Dame de Paix est l’un des meilleurs établissement qui prône de nos jours des valeurs chrétienne et morale basés sur les saintes écritures.  ",
+                  style: GoogleFonts.lobsterTwo(
+                      fontSize: 30, color: Colors.white), //-- font
+                )),
+          ),
+        ]),
+      );
+    }
+    //-------Responsive Entête Mobile ---------
+    else {
+      return Container(
+        padding: const EdgeInsets.symmetric(
+            horizontal: 10, vertical: 5), //-- horizontal & vertical
+        child: Stack(alignment: Alignment.center, children: [
+          Align(
+            alignment: Alignment.centerRight,
+            child: Container(
+              width: 430, //--
+              height: 300, //--
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/ecole.jpg"),
+                      fit: BoxFit.cover),
+                  borderRadius: BorderRadius.circular(10)),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+                padding: EdgeInsets.all(10),
+                width: 250, //--
+                decoration: BoxDecoration(
+                    color: colorsRed, borderRadius: BorderRadius.circular(10)),
+                child: Text(
+                  " Crée en 1970 par une communauté Catholique,Nôtre Dame de Paix est l’un des meilleurs établissement qui prône de nos jours des valeurs chrétienne et morale basés sur les saintes écritures.  ",
+                  style: GoogleFonts.lobsterTwo(
+                      fontSize: 25, color: Colors.white), //-- font
+                )),
+          ),
+        ]),
+      );
+    }
+  }
+}
+
+class MyAppBar extends StatelessWidget {
+  const MyAppBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    if (Responsive.isDesktop(context)) {
+      return AppBar(
+        backgroundColor: Color.fromARGB(255, 13, 63, 104),
+        toolbarHeight: 80,
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              child: Row(
+                children: [
+                  Container(
+                      height: 70,
+                      width: 70,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image:
+                                  AssetImage("assets/images/notredame.png")))),
+                  SizedBox(
+                      width: 1,
+                      child: Container(height: 80, color: Colors.white)),
+                  Container(
+                    child: Text(
+                      "NOTRE\nDAME DE PAIX",
+                      style: GoogleFonts.karma(fontSize: 22),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          Row(
+            children: [
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (Context) => DesktopScaffold()));
+                },
+                child: Center(
+                    child: Text("Acceuil",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 19, color: Colors.white))),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (Context) => Acceuil()));
+                },
+                child: Center(
+                    child: Text("Visite Guidée",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 19, color: Colors.white))),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePageStud()));
+                },
+                child: Center(
+                    child: Text("Connexion",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 19, color: Colors.white))),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (Context) => Acceuil()));
+                },
+                child: Container(
+                  color: Colors.amber,
+                  child: FittedBox(
+                      child: Container(
+                    color: colorsRed,
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                    child: Text("Notre projet ?",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 19, color: Colors.white)),
+                  )),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            width: 5,
+          ),
+        ],
+      );
+
+      //-----Responsive Tablet-------
+    } else if (Responsive.isTablet(context)) {
+      return AppBar(
+        backgroundColor: Color.fromARGB(255, 13, 63, 104),
+        toolbarHeight: 70, //---
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              child: Row(
+                children: [
+                  Container(
+                      height: 50, //--
+                      width: 50, //--
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image:
+                                  AssetImage("assets/images/notredame.png")))),
+                  SizedBox(
+                      width: 1,
+                      child: Container(height: 80, color: Colors.white)),
+                  Container(
+                    child: Text(
+                      "NOTRE\nDAME DE PAIX",
+                      style: GoogleFonts.karma(fontSize: 19), //--
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          Row(
+            children: [
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (Context) => DesktopScaffold()));
+                },
+                child: Center(
+                    child: Text("Acceuil",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 19, color: Colors.white))),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (Context) => Acceuil()));
+                },
+                child: Center(
+                    child: Text("Visite Guidée",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 19, color: Colors.white))),
+              ),
+              FloatingActionButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (Context) => MyHomePage()));
+                },
+                child: Center(
+                    child: Text("Connexion",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 19, color: Colors.white))),
+                heroTag: UniqueKey(),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (Context) => Acceuil()));
+                },
+                child: Container(
+                  color: Colors.amber,
+                  child: FittedBox(
+                      child: Container(
+                    color: colorsRed,
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                    child: Text("Notre projet ?",
+                        style: GoogleFonts.montserrat(
+                            fontSize: 19, color: Colors.white)),
+                  )),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            width: 5,
+          ),
+        ],
+      );
+    }
+    //-----Responsive Mobile-------
+    else {
+      return AppBar(
+        backgroundColor: Color.fromARGB(255, 13, 63, 104),
+        toolbarHeight: 70, //---
+        elevation: 0,
+        automaticallyImplyLeading: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              child: Row(
+                children: [
+                  Container(
+                      height: 50, //--
+                      width: 50, //--
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image:
+                                  AssetImage("assets/images/notredame.png")))),
+                  SizedBox(
+                      width: 1,
+                      child: Container(height: 80, color: Colors.white)),
+                  Container(
+                    child: Text(
+                      "NOTRE\nDAME DE PAIX",
+                      style: GoogleFonts.karma(fontSize: 19), //--
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    }
   }
 }
        

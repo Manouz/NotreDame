@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:aprilproject/ColorsPanel.dart';
+import 'package:aprilproject/ResponsiveMethod/responsive.dart';
 
 //import 'package:animated_text_kit/animated_text_kit.dart';
 
@@ -280,99 +281,192 @@ class Conteneur extends StatelessWidget {
   const Conteneur({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: colorBlue),
-      child: Container(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Row(
-                    children: [
-                      Container(
-                          height: 30,
-                          width: 30,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/notredame.png")))),
-                      Container(
-                        child: Text(
-                          "NOTRE\nDAME DE PAIX",
-                          style: GoogleFonts.karma(
-                              fontSize: 19, color: Colors.white),
+    if (!Responsive.isMobile(context)) {
+      return Container(
+        decoration: BoxDecoration(color: colorBlue),
+        child: Container(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    child: Row(
+                      children: [
+                        Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/images/notredame.png")))),
+                        Container(
+                          child: Text(
+                            "NOTRE\nDAME DE PAIX",
+                            style: GoogleFonts.karma(
+                                fontSize: 19, color: Colors.white),
+                          ),
                         ),
+                      ],
+                    ),
+                  ),
+                  // Row(
+                  //   children: [
+                  //     Icon(Icons.add_call),
+                  //     Icon(Icons.add_call),
+                  //     Icon(Icons.add_call),
+                  //     Icon(Icons.add_call),
+                  //   ],
+                  // )
+                ],
+              ),
+              Divider(
+                color: Colors.white,
+                thickness: 0.5,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Nos liens",
+                          style: GoogleFonts.lobsterTwo(
+                              fontSize: 20, color: Colors.white)),
+                      Text(
+                        "Inscription",
+                        style: GoogleFonts.lobsterTwo(
+                            fontSize: 20, color: Colors.amber),
+                      ),
+                      Text(
+                        "Inscription",
+                        style: GoogleFonts.lobsterTwo(
+                            fontSize: 20, color: Colors.amber),
                       ),
                     ],
                   ),
-                ),
-                // Row(
-                //   children: [
-                //     Icon(Icons.add_call),
-                //     Icon(Icons.add_call),
-                //     Icon(Icons.add_call),
-                //     Icon(Icons.add_call),
-                //   ],
-                // )
-              ],
-            ),
-            Divider(
-              color: Colors.white,
-              thickness: 0.5,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Nos liens",
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Site internet de l’école : notredamedepaix@educ.ci",
+                          style: GoogleFonts.lobsterTwo(
+                              fontSize: 20, color: Colors.white)),
+                      Text(
+                        "Addresse : 01 BP Abidjan 01",
                         style: GoogleFonts.lobsterTwo(
-                            fontSize: 20, color: Colors.white)),
-                    Text(
-                      "Inscription",
-                      style: GoogleFonts.lobsterTwo(
-                          fontSize: 20, color: Colors.amber),
-                    ),
-                    Text(
-                      "Inscription",
-                      style: GoogleFonts.lobsterTwo(
-                          fontSize: 20, color: Colors.amber),
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Site internet de l’école : notredamedepaix@educ.ci",
+                            fontSize: 20, color: Colors.amber),
+                      ),
+                      Text(
+                        "Sécrétariat : Inscription +225 0 234 234 / +225 0 800 800",
                         style: GoogleFonts.lobsterTwo(
-                            fontSize: 20, color: Colors.white)),
-                    Text(
-                      "Addresse : 01 BP Abidjan 01",
-                      style: GoogleFonts.lobsterTwo(
-                          fontSize: 20, color: Colors.amber),
-                    ),
-                    Text(
-                      "Sécrétariat : Inscription +225 0 234 234 / +225 0 800 800",
-                      style: GoogleFonts.lobsterTwo(
-                          fontSize: 20, color: Colors.amber),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 4,
-            ),
-          ],
+                            fontSize: 20, color: Colors.amber),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 4,
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    } else {
+      return Container(
+        decoration: BoxDecoration(color: colorBlue),
+        child: Container(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    child: Row(
+                      children: [
+                        Container(
+                            height: 20, //--
+                            width: 20, //--
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/images/notredame.png")))),
+                        Container(
+                          child: Text(
+                            "NOTRE\nDAME DE PAIX",
+                            style: GoogleFonts.karma(
+                                fontSize: 15, color: Colors.white), //--
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  // Row(
+                  //   children: [
+                  //     Icon(Icons.add_call),
+                  //     Icon(Icons.add_call),
+                  //     Icon(Icons.add_call),
+                  //     Icon(Icons.add_call),
+                  //   ],
+                  // )
+                ],
+              ),
+              Divider(
+                color: Colors.white,
+                thickness: 0.5,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Nos liens",
+                          style: GoogleFonts.lobsterTwo(
+                              fontSize: 15, color: Colors.white)), //--
+                      Text(
+                        "Inscription",
+                        style: GoogleFonts.lobsterTwo(
+                            fontSize: 15, color: Colors.amber), //--
+                      ),
+                      Text(
+                        "Inscription",
+                        style: GoogleFonts.lobsterTwo(
+                            fontSize: 15, color: Colors.amber), //--
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Site internet de l’école : notredamedepaix@educ.ci",
+                          style: GoogleFonts.lobsterTwo(
+                              fontSize: 15, color: Colors.white)), //--
+                      Text(
+                        "Addresse : 01 BP Abidjan 01",
+                        style: GoogleFonts.lobsterTwo(
+                            fontSize: 15, color: Colors.amber), //--
+                      ),
+                      Text(
+                        "Sécrétariat : Inscription +225 0 234 234 / +225 0 800 800",
+                        style: GoogleFonts.lobsterTwo(
+                            fontSize: 15, color: Colors.amber), //--
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      );
+    }
   }
 }
 

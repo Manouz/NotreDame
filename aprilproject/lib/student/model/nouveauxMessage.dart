@@ -14,5 +14,5 @@ class NouveauxMessage {
       required this.premierePhraseMss,
       required this.imageAuteur});
 
-  String getImage() => 'images/$imageAuteur';
+  String getImage() => 'assets/images/$imageAuteur';
 }
