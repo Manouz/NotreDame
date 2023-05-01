@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
         //   desktopScaffold: DesktopScaffold(),
         // ));
         // home: Acceuil());
-        home: DesktopScaffold());
-    // home: const MyHomePage());
+        // home: DesktopScaffold());
+        home: const MyHomePage());
   }
 }
